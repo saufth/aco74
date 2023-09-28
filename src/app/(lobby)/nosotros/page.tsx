@@ -2,19 +2,28 @@ import { Button } from '@/components/ui/Button'
 import { Icons } from '@/components/Icons'
 import { Balancer } from 'react-wrap-balancer'
 import Image from 'next/image'
+import { cn } from '@/lib/utils'
 
 const aboutUs = [
   {
     heading: 'Misión',
     description: 'Optimizar el departamento de compras de nuestros clientes, logrando el equilibrio entre  la mejor calidad, al mejor precio, en el menor tiempo. Accediendo a toda la variedad que los mercados internacionales ofrecen  a través de los distintos aliados y proveedores.',
     Icon: () => <Icons.Mission className='fill-primary w-10 sm:w-12 h-auto' />,
-    image: '/images/mission.webp'
+    image: {
+      src: '/images/mission.svg',
+      width: 916.4768,
+      height: 840
+    }
   },
   {
     heading: 'Visión',
     description: 'Buscamos ser la alternativa más resolutiva para los departamentos de compras en latinoamérica, siendo el eslabón estratégico de nuestros clientes en búsqueda de que logren  sus objetivos empresariales, convirtiéndonos en la referencia especializada con mayor prestigio en eficiencia y calidad.',
     Icon: () => <Icons.Vision className='fill-primary w-10 sm:w-12 h-auto' />,
-    image: '/images/vision.webp'
+    image: {
+      src: '/images/vision.svg',
+      width: 848.5933,
+      height: 840
+    }
   }
 ] as const
 
@@ -84,8 +93,8 @@ const values = [
 export default function About () {
   return (
     <>
-      <section className='max-w-7xl mx-auto lg:flex lg:items-center space-y-8 lg:space-y-0 py-12 lg:py-0'>
-        <div className='max-w-md px-4 lg:px-6 mx-auto z-10 lg:pt-0 lg:pb-24'>
+      <section className='max-w-7xl mx-auto lg:flex lg:items-center space-y-8 lg:space-y-0 lg:gap-x-8 py-12'>
+        <div className='max-w-md px-4 lg:px-6 mx-auto z-10'>
           <div className='space-y-4 lg:space-y-6'>
             <div className='font-primary space-y-4 lg:space-y-6 text-center lg:text-left'>
               <Balancer as='h1' className='text-h1'>
@@ -104,10 +113,10 @@ export default function About () {
         </div>
         <div className='w-full'>
           <Image
-            src='/images/hero.svg'
-            alt='ACO74 hero image'
-            className='relative w-full h-auto px-4 lg:pr-6 lg:pt-8 lg:pb-24'
-            width={915.8208}
+            src='/images/about-hero.svg'
+            alt='ACO74 nosotros'
+            className='relative w-full h-auto px-4 lg:pr-6 lg:pl-0'
+            width={916.2998}
             height={840}
           />
         </div>
@@ -126,32 +135,32 @@ export default function About () {
               consequuntur modi et praesentium voluptates beatae tenetur eligendi.
             </Balancer>
           </div>
-          <div className='space-y-8 md:space-y-12'>
-            <article className='space-y-8 md:flex md:gap-x-24 md:items-center md:space-y-0'>
-              <div className='md:w-2/3'>
-                <Image
-                  src='/images/building-machinary.svg'
-                  alt='Nosotros'
-                  width={1260}
-                  height={860}
-                  className='w-full h-auto rounded-xl'
-                />
-              </div>
-              <div className='md:w-1/3 space-y-3 md:space-y-8'>
-                {aboutUs.map((about, key) => {
-                  return (
-                    <div className='space-y-3 md:space-y-4 text-center md:text-left' key={key}>
-                      <Balancer as='h3' className='text-h3'>
-                        {about.heading}
-                      </Balancer>
-                      <Balancer as='p' className='text-p'>
-                        {about.description}
-                      </Balancer>
-                    </div>
-                  )
-                })}
-              </div>
-            </article>
+          <div className='space-y-8 sm:space-y-24'>
+            {aboutUs.map((about, key) => {
+              const isPair = key % 2 === 0
+
+              return (
+                <article className={cn('flex lg:flex-row lg:items-center flex-col-reverse gap-6', (isPair && 'lg:flex-row-reverse'))} key={key}>
+                  <div className={cn('lg:max-w-xl px-2 space-y-3 lg:space-y-4 text-center lg:text-left', (isPair ? 'lg:pl-12 lg:pr-4' : 'lg:pr-12 lg:pl-4'))}>
+                    <Balancer as='h3' className='text-h3'>
+                      {about.heading}
+                    </Balancer>
+                    <Balancer as='p' className='text-p'>
+                      {about.description}
+                    </Balancer>
+                  </div>
+                  <div className='w-full'>
+                    <Image
+                      src={about.image.src}
+                      alt={about.heading}
+                      width={about.image.width}
+                      height={about.image.height}
+                      className='w-full h-auto'
+                    />
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>
