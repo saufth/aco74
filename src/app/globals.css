@@ -10,7 +10,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 194 66% 72%;
+    --primary: 228 82% 55%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -33,7 +33,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 194 66% 72%;
+    --primary: 228 82% 55%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -75,14 +75,26 @@
 
 @layer utilities {
   .text-h1 {
-    @apply leading-[1.15] text-4xl sm:text-6xl font-semibold sm:leading-none;
+    @apply leading-[1.15] text-[34px] md:text-5xl lg:text-6xl font-semibold lg:leading-none;
   }
 
   .text-h2 {
-    @apply text-[26px] sm:text-4xl font-medium;
+    @apply text-2xl lg:text-4xl font-medium;
   }
 
   .text-h3 {
-    @apply text-xl sm:text-2xl font-medium;
+    @apply text-xl lg:text-2xl font-medium;
+  }
+
+  .text-hp1 {
+    @apply text-sm md:text-lg font-medium;
+  }
+
+  .text-hp2 {
+    @apply text-sm lg:text-base text-muted-foreground;
+  }
+
+  .text-p {
+    @apply text-xs lg:text-sm text-muted-foreground;
   }
 }

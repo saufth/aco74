@@ -8,27 +8,27 @@ const services = [
   {
     heading: 'Venta y renta de maquinaria, equipo y herramienta para la construcción',
     description: 'Nos especializamos en proporcionar equipos y herramientas necesarios para proyectos de construcción, ofreciendo una amplia gama de maquinaria, que incluye excavadoras, grúas, retroexcavadoras, martillos neumáticos, hormigoneras y herramientas de construcción como sierras, taladros, y equipo de seguridad. Poniendo a disposición de nuestros clientes la opción de comprar o alquilar estos equipos según sus necesidades.',
-    image: '/images/mission.webp'
+    image: '/images/building-machinary.svg'
   },
   {
     heading: 'Venta y renta de maquinaria, equipo y herramienta industrial',
     description: 'Atendemos las necesidades de la industria, facilitando maquinaria y equipos especializados para aplicaciones industriales, como máquinas de soldar, tornos, fresadoras, compresores de aire, generadores eléctricos y herramientas de precisión. Ayudamos a las empresas a adquirir el equipo necesario para sus procesos de fabricación y producción.',
-    image: '/images/mission.webp'
+    image: '/images/industrial-equipment.svg'
   },
   {
     heading: 'Venta y renta de maquinaria, equipo y herramienta para jardinería',
     description: 'Suministramos herramientas y equipos necesarios para el mantenimiento de jardines y áreas verdes. Vendemos y rentamos cortadoras de césped, desbrozadoras, sopladoras de hojas, podadoras y herramientas de jardinería, junto con servicios de alquiler para aquellos que no necesitan el equipo de forma permanente. Nuestros principales clientes son paisajistas, jardineros y propietarios de jardines que buscan realzar la belleza de sus áreas verdes.',
-    image: '/images/mission.webp'
+    image: '/images/gardening.svg'
   },
   {
     heading: 'Venta de material para la construcción, eléctrico e industrial',
     description: 'Proveemos una variedad de materiales esenciales para la construcción, desde ladrillos, cemento y madera, hasta productos eléctricos como cables, interruptores y componentes industriales como tuberías y válvulas, que son recursos fundamentales para contratistas, constructores y empresas de mantenimiento.',
-    image: '/images/mission.webp'
+    image: '/images/building-material.svg'
   },
   {
     heading: 'Venta de accesorios y refacciones para automóviles',
     description: 'Ofrecemos una amplia gama de accesorios y piezas de repuesto para vehículos. Los productos incluyen filtros de aceite, frenos, baterías, llantas, aceites y una variedad de accesorios como estéreos, tapetes y luces personalizadas. Somos un referente confiable para propietarios de automóviles y mecánicos.',
-    image: '/images/mission.webp'
+    image: '/images/autoparts.svg'
   },
   {
     heading: 'Venta de productos de cartón',
@@ -55,21 +55,32 @@ const services = [
 export default function Home () {
   return (
     <>
-      <section className='max-w-7xl mx-auto relative z-20'>
-        <div className='h-2xl px-4 md:px-6 mx-auto pt-16 sm:pt-24 relative'>
-          <div className='flex flex-col items-start sm:items-start gap-y-6 max-w-xl'>
-            <div className='font-primary space-y-6'>
-              <Balancer as='h1' className='leading-[1.15] text-[42px] sm:text-6xl font-semibold sm:leading-none'>
+      <section className='max-w-7xl mx-auto lg:flex lg:items-center space-y-8 lg:space-y-0 py-12 lg:py-0'>
+        <div className='max-w-md px-4 lg:px-6 mx-auto z-10 lg:pt-0 lg:pb-24'>
+          <div className='space-y-4 lg:space-y-6'>
+            <div className='font-primary space-y-4 lg:space-y-6 text-center lg:text-left'>
+              <Balancer as='h1' className='text-h1'>
                 {siteConfig.description}
               </Balancer>
-              <Balancer as='p' className='text-sm sm:text-lg font-medium md:pr-32'>
+              <Balancer as='p' className='text-hp1'>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia magni reprehenderit error, quo nulla quia asperiores doloremque iste.
               </Balancer>
             </div>
-            <Button className='mt-2 sm:mt-4 font-medium' color='primary' size='lg'>
-              Contáctanos
-            </Button>
+            <div className='flex justify-center lg:justify-start'>
+              <Button className='mt-2 lg:mt-4 font-medium' variant='solid' color='primary' size='lg'>
+                Contáctanos
+              </Button>
+            </div>
           </div>
+        </div>
+        <div className='w-full'>
+          <Image
+            src='/images/hero.svg'
+            alt='ACO74 hero image'
+            className='relative w-full h-auto px-4 lg:pr-6 lg:pt-8 lg:pb-24'
+            width={915.8208}
+            height={840}
+          />
         </div>
       </section>
       <section className='bg-muted'>
@@ -80,40 +91,31 @@ export default function Home () {
                 Nuestras soluciones
               </span>
             </Balancer>
-            <Balancer as='p' className='text-sm sm:text-base text-muted-foreground'>
+            <Balancer as='p' className='text-hp2'>
               Nuestra empresa está comprometida con la excelencia, la innovación y la satisfacción absoluta de nuestros clientes.
               Conoce la lista de productos de primera y descubra cómo ACO 74 puede marcar una diferencia en su empresa o negocio.
             </Balancer>
-            <div className='pt-4'>
-              <Image
-                src='/images/solutions1.webp'
-                alt='Nuestras soluciones'
-                width={1260}
-                height={860}
-                className='w-full h-auto rounded-xl block md:hidden'
-              />
-            </div>
           </div>
           <div className='space-y-8 sm:space-y-24'>
             {services.map((service, key) => {
               const isPair = key % 2 === 0
 
               return (
-                <article className={cn('flex md:flex-row md:items-center flex-col-reverse gap-y-6', (isPair && 'md:flex-row-reverse'))} key={key}>
-                  <div className={cn('md:w-1/2 px-2 space-y-3 md:space-y-4 text-center md:text-left', (isPair ? 'md:pl-12 md:pr-4' : 'md:pr-12 md:pl-4'))}>
+                <article className={cn('flex lg:flex-row lg:items-center flex-col-reverse gap-6', (isPair && 'lg:flex-row-reverse'))} key={key}>
+                  <div className={cn('lg:max-w-xl px-2 space-y-3 lg:space-y-4 text-center lg:text-left', (isPair ? 'lg:pl-12 lg:pr-4' : 'lg:pr-12 lg:pl-4'))}>
                     <Balancer as='h3' className='text-h3'>
                       {service.heading}
                     </Balancer>
-                    <Balancer as='p' className='text-xs sm:text-sm text-muted-foreground'>
+                    <Balancer as='p' className='text-p'>
                       {service.description}
                     </Balancer>
                   </div>
-                  <div className='md:w-1/2'>
+                  <div className='w-full'>
                     <Image
                       src={service.image}
                       alt={service.heading}
-                      width={1260}
-                      height={860}
+                      width={957.5728}
+                      height={840}
                       className='w-full h-auto'
                     />
                   </div>

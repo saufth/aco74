@@ -25,7 +25,7 @@ export default function SiteHeader () {
 
   return (
     <Navbar
-      className='sm:py-2'
+      className='sm:py-4'
       maxWidth='xl'
       isBordered={isOnTop}
       isBlurred={false}
@@ -34,14 +34,13 @@ export default function SiteHeader () {
     >
       <NavbarBrand>
         <Link href='/'>
-          <Icons.Logoname className='w-auto h-8 md:h-10 fill-primary' />
+          <Icons.Logoname className='w-auto h-8 md:h-10 lg:h-12 fill-primary' />
         </Link>
       </NavbarBrand>
       <NavbarContent className='w-full' justify='end'>
         {siteConfig.mainNav.map((navItem, key) => (
           <NavbarItem key={key} className='hidden md:block'>
             <Link
-              className='text-xs md:text-sm'
               color='foreground'
               href={navItem.href}
             >
@@ -52,7 +51,7 @@ export default function SiteHeader () {
         {/* <ThemeToggle /> */}
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Abrir menu' : 'Cerrar menu'}
-          className='sm:hidden'
+          className='md:hidden'
         />
       </NavbarContent>
       <NavbarMenu className='pt-32'>
