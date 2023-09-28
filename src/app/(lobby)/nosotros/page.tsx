@@ -17,7 +17,7 @@ const aboutUs = [
   },
   {
     heading: 'Visión',
-    description: 'Buscamos ser la alternativa más resolutiva para los departamentos de compras en latinoamérica, siendo el eslabón estratégico de nuestros clientes en búsqueda de que logren  sus objetivos empresariales, convirtiéndonos en la referencia especializada con mayor prestigio en eficiencia y calidad.',
+    description: 'Buscamos ser la alternativa más resolutiva para los departamentos de compras en latinoamérica, siendo el eslabón estratégico de nuestros clientes en búsqueda del logro de sus objetivos empresariales, convirtiéndonos en la referencia especializada con mayor prestigio en eficiencia y calidad.',
     Icon: () => <Icons.Vision className='fill-primary w-10 sm:w-12 h-auto' />,
     image: {
       src: '/images/vision.svg',

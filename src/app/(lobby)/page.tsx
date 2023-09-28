@@ -130,7 +130,7 @@ export default function Home () {
             </Balancer>
             <Balancer as='p' className='text-hp2'>
               Nuestra empresa está comprometida con la excelencia, la innovación y la satisfacción absoluta
-              de nuestros clientes. Conoce la lista de productos de primera y descubra cómo ACO 74 puede
+              de nuestros clientes. Conozca la lista de productos de primera y descubra cómo ACO 74 puede
               marcar una diferencia en su empresa o negocio.
             </Balancer>
           </div>
